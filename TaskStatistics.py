@@ -25,7 +25,6 @@ def get_phId(userName, apiToken):
 		json_response = json.loads(response.text)
 		return json_response['result']['data'][0]['phid']
 	except:
-		print('Error occured while fetching phId!')
 		return -1
 
 
@@ -45,7 +44,6 @@ def get_tasksId(userName, apiToken):
 			tasksId.append(int(each["id"]))
 		return tasksId
 	except:
-		print('Error occured while fetching tasks Ids!')
 		return -1
 
 
@@ -111,3 +109,7 @@ if __name__ == '__main__':
 				date += datetime.timedelta(weeks=1)	
 
 			print('+------+----------------+')
+		else:
+			print('Error occured while fetching tasks Ids!')
+	else:
+		print('Error occured while fetching phId!')
